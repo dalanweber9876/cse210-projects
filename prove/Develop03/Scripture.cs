@@ -20,8 +20,7 @@ public class Scripture
     public void HideWords()
     {
         int count = 0;
-        int hiddenWordCount = 0;
-        while (count < 3)
+        while (count < 1)
         {
             Random random = new Random();
             int number = random.Next(_scripture.Count());

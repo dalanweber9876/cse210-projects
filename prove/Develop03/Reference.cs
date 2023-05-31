@@ -27,4 +27,10 @@ public class Reference
         string reference = ($"{_book} {_chapter}:{_firstVerse}-{_lastVerse}");
         return reference;
     }
+
+    public string LivingChristReference()
+    {
+        string reference = ($"{_book} paragraph {_firstVerse}");
+        return reference;
+    }
 }
