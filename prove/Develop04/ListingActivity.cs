@@ -11,7 +11,7 @@ public class ListingActivity: Activity
     public void RunActivity()
     {
         
-        int duration = GetDuration();
+        _userInputDuration = GetDuration();
         Console.Clear();
         Console.WriteLine("Get ready...");
         Console.WriteLine();
@@ -27,7 +27,7 @@ public class ListingActivity: Activity
         List<string> entries = new List<string>();
         DateTime startTime = DateTime.Now;
         DateTime currentTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(duration);
+        DateTime futureTime = startTime.AddSeconds(_userInputDuration);
         while (currentTime < futureTime)
         {
            Console.Write(">");
