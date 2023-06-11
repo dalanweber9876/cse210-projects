@@ -26,21 +26,6 @@ public class ListingActivity: Activity
         PauseWithTimer(4);
         Console.WriteLine();
         run(_userInputDuration);
-        //List<string> entries = new List<string>();
-        // DateTime startTime = DateTime.Now;
-        // DateTime currentTime = DateTime.Now;
-        // DateTime futureTime = startTime.AddSeconds(_userInputDuration);
-        // while (currentTime < futureTime)
-        // {
-        //    Console.Write(">");
-        //    string entry = Console.ReadLine();
-        //    entries.Add(entry);
-        //    currentTime = DateTime.Now;
-
-        // }
-
-        //GetNumberOfEntries(entries);
-        //Console.Write($"You listed {_numberOfEntries} items!");
         Console.WriteLine();
         Console.WriteLine();
     }
@@ -87,6 +72,7 @@ public class ListingActivity: Activity
         Console.WriteLine("\nTime's up!");
         string bufStr = String.Join<string>("", buf);
         Console.Write($"You listed {_numberOfEntries} items!");
+        sw.Reset();
     }
     
     private void GetRandomPrompt()
@@ -96,14 +82,4 @@ public class ListingActivity: Activity
         int randomPrompt = randomNumber.Next(0,5);
         _prompt = prompts[randomPrompt];
     }
-
-    // private void GetNumberOfEntries(List<string>_entries)
-    // {
-    //     int count = 0;
-    //     foreach(string item in _entries)
-    //     {
-    //         count += 1;
-    //     }
-    //     _numberOfEntries = count;
-    // }
 }
