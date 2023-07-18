@@ -22,7 +22,7 @@ public class Activity
     public void DisplayGoodbyeMessage()
     {
         Console.WriteLine("Well done!!");
-        PauseWithSpinner(3);
+        
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_userInputDuration} seconds of the {_activityName}.");
         PauseWithSpinner(4);
@@ -39,7 +39,7 @@ public class Activity
         return durationInt;
     }
 
-    public void PauseWithSpinner(int duration)
+    public void PauseWithSpinner(double duration)
     {
         DateTime startTime = DateTime.Now;
         DateTime currentTime = DateTime.Now;
@@ -68,13 +68,13 @@ public class Activity
         }
     }
 
-    public void PauseWithTimer(int duration)
+    public void PauseWithTimer(double duration)
     {
         int count = 0;
         while ( count < duration)
         {
-            Console.Write(duration - count);
-
+            double current = duration - count;
+            Console.Write(current);
             Thread.Sleep(1000);
 
             Console.Write("\b \b");

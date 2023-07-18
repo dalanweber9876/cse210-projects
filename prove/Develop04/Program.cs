@@ -12,7 +12,7 @@ class Program
             Console.WriteLine("  1. Start Breathing Activity");
             Console.WriteLine("  2. Start Reflecting Activity");
             Console.WriteLine("  3. Start Listing Activity");
-            Console.WriteLine("  4. Start Ranting Activity");
+            Console.WriteLine("  4. Start Clear Your Mind Activity");
             Console.WriteLine("  5. Quit");
             Console.Write("Select a choice from the menu:");
             userInput = Console.ReadLine();
@@ -45,10 +45,10 @@ class Program
 
             else if (userInput == "4")
             {
-                RantingActivity ra = new RantingActivity("Ranting Activity", "get things off your chest by having you write down whatever you would like to say.");
-                ra.DisplayWelcomeMessage();
-                ra.RunActivity();
-                ra.DisplayGoodbyeMessage();
+                ClearMindActivity cma = new ClearMindActivity("Clear Your Mind Activity", "take some time to let go of the things that are in your head and relax.");
+                cma.DisplayWelcomeMessage();
+                cma.RunActivity();
+                cma.DisplayGoodbyeMessage();
             }
 
             else if (userInput == "5"){}

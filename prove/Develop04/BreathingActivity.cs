@@ -1,7 +1,7 @@
 public class BreathingActivity: Activity
 {
-    private int _breatheInDuration = 5;
-    private int _breatheOutDuration = 5;
+    private double _breatheInDuration;
+    private double _breatheOutDuration;
     public BreathingActivity(string activityName, string description): base(activityName, description)
     {
         
@@ -27,8 +27,44 @@ public class BreathingActivity: Activity
         DateTime startTime = DateTime.Now;
         DateTime currentTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_userInputDuration);
+
+        
+
         while (currentTime < futureTime)
         {
+            TimeSpan difference = futureTime - currentTime;
+            double timeLeft = difference.TotalSeconds;
+            if (timeLeft >= 10 )
+            {
+                _breatheInDuration = 5;
+                _breatheOutDuration = 5;
+            }
+            else if (Math.Round(timeLeft, 0) == 2)
+            {
+                _breatheInDuration = Math.Round(timeLeft / 2, 1);
+                _breatheOutDuration = Math.Round(timeLeft / 2, 1);
+            }
+            else if (Math.Round(timeLeft, 0) == 4)
+            {
+                _breatheInDuration = Math.Round(timeLeft / 2, 1);
+                _breatheOutDuration = Math.Round(timeLeft / 2, 1);
+            }
+            else if (Math.Round(timeLeft, 0) == 6)
+            {
+                _breatheInDuration = Math.Round(timeLeft / 2, 1);
+                _breatheOutDuration = Math.Round(timeLeft / 2, 1);
+            }
+            else if (Math.Round(timeLeft, 0) == 8)
+            {
+                _breatheInDuration = Math.Round(timeLeft / 2, 1);
+                _breatheOutDuration = Math.Round(timeLeft / 2, 1);
+            }
+            else
+            {
+                _breatheInDuration = Math.Round(timeLeft / 2, 1) + .5;
+                _breatheOutDuration = Math.Round(timeLeft / 2, 1) - .5;
+            }
+            
             BreatheIn();
             Console.WriteLine();
             BreatheOut();
