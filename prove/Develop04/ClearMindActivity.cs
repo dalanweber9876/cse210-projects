@@ -18,18 +18,6 @@ public class ClearMindActivity: Activity
         PauseWithTimer(4);
         Console.WriteLine();
 
-        // DateTime startTime = DateTime.Now;
-        // DateTime currentTime = DateTime.Now;
-        // DateTime futureTime = startTime.AddSeconds(_userInputDuration);
-        // while (currentTime < futureTime)
-        // {
-        //     Console.Write(">");
-        //     Console.ReadLine();
-        //     currentTime = DateTime.Now;
-        // }
-        // Console.WriteLine();
-        // Console.WriteLine();
-
         int count = 0;
         while ( count < _userInputDuration)
         {
